@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#174b3b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="వాక్య దీపం"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>వాక్య దీపం | తెలుగు బైబిల్ & చర్చి</title>
+<style>
+:root{--green:#123d32;--green2:#28745a;--cream:#fff8e8;--gold:#e9c779;--ink:#172b25;--muted:#687a72;--line:#e1e8e1;--white:#fff;--glass:rgba(255,255,255,.78)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 8%,#dcece2 0,transparent 36%),radial-gradient(ellipse at 90% 34%,#f6e8c8 0,transparent 31%),linear-gradient(145deg,#f7f8f2,#edf3ed 52%,#f8f4e8);background-attachment:fixed;color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Telugu",sans-serif;overflow-x:hidden}body:before{content:"✧";position:fixed;z-index:-1;right:-35px;top:20%;font-size:240px;color:#b7d3c2;opacity:.23;transform:rotate(18deg);pointer-events:none}body:after{content:"";position:fixed;z-index:-1;width:260px;height:260px;left:-110px;bottom:10%;border:1px solid #c5d8c7;border-radius:42% 58% 67% 33%;box-shadow:0 0 0 24px #d8e7dc55,0 0 0 50px #e6d7b255;transform:rotate(-25deg);pointer-events:none}
+header{background:linear-gradient(125deg,rgba(9,48,38,.98),rgba(30,104,77,.96),rgba(37,124,91,.93));color:white;padding:22px 18px 24px;border-radius:0 0 32px 32px;box-shadow:0 16px 40px #123d3228;position:relative;overflow:hidden}header:after{content:"✦";position:absolute;right:20px;top:8px;font-size:100px;color:#ffffff15;transform:rotate(12deg);pointer-events:none}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font-size:22px;font-weight:800}.sub{opacity:.85;font-size:13px;margin-top:3px}.lang{border:1px solid #ffffff66;background:#ffffff12;color:white;border-radius:12px;padding:8px}
+main{max-width:850px;margin:auto;padding:14px 14px 95px}.hero{margin-top:14px;background:linear-gradient(135deg,rgba(255,250,235,.96),rgba(255,255,255,.86));border:1px solid #e9dfc7;border-radius:24px;padding:20px;position:relative;overflow:hidden;box-shadow:0 18px 44px #1a503616;transform:translateZ(0)}.hero:after{content:"✧";position:absolute;right:14px;bottom:-32px;font-size:170px;color:#d5bc7a20;pointer-events:none}.hero>*{position:relative;z-index:1}.eyebrow{font-size:12px;color:#80642d;font-weight:800;letter-spacing:.4px}.hero h2{margin:8px 0;font-size:22px;line-height:1.45}.verse{font-size:17px;line-height:1.9}.ref{color:#856b36;font-weight:700;font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button,.btn{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;background:var(--green);color:white;font:inherit;font-weight:650;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+button.secondary,.btn.secondary{background:#e9f0eb;color:var(--green)}button.gold{background:var(--gold);color:#2d281c}
+.tabs{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(15px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding:7px max(8px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom));gap:3px}
+.tabs button{flex:1;max-width:150px;display:flex;flex-direction:column;gap:2px;background:transparent;color:#718078;padding:7px 2px;font-size:11px;border-radius:10px}.tabs button.active{background:#e8f0eb;color:var(--green)}.tabs .ico{font-size:20px}
+.panel{display:none}.panel.active{display:block}.section-title{font-size:20px;margin:18px 0 10px}.card{background:var(--glass);backdrop-filter:blur(12px);border:1px solid #ffffffd9;border-radius:20px;padding:16px;margin:11px 0;box-shadow:0 9px 30px #173e3010,0 1px 0 #ffffff inset;transition:transform .2s,box-shadow .2s}.card:active{transform:translateY(1px)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tile{background:linear-gradient(145deg,#ffffffed,#f4f8f3e8);border:1px solid #ffffff;border-radius:18px;padding:16px;text-align:left;color:var(--ink);display:block;width:100%;box-shadow:0 8px 24px #214b3610;transition:transform .2s,box-shadow .2s}.tile:hover{transform:translateY(-3px);box-shadow:0 14px 28px #214b3620}.tile strong{display:block;font-size:15px}.tile span{font-size:12px;color:var(--muted)}
+input,select,textarea{width:100%;padding:12px;border:1px solid #d8e0d9;border-radius:12px;background:#fff;font:inherit;margin:5px 0 11px;color:var(--ink)}label{font-size:13px;font-weight:700;color:#43544b}textarea{min-height:85px;resize:vertical}.row{display:flex;gap:9px}.row>*{flex:1;min-width:0}.verse-line{padding:11px 0;border-bottom:1px solid var(--line);line-height:1.9}.verse-num{color:#9a7a35;font-weight:800;margin-right:7px}.small{font-size:12px;color:var(--muted);line-height:1.7}.pill{display:inline-block;border-radius:99px;background:#eaf2ec;color:#28634c;padding:5px 9px;font-size:12px;font-weight:700}.church-img{width:100%;max-height:180px;object-fit:cover;border-radius:13px;margin:8px 0}.member-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}.member-row .small{overflow-wrap:anywhere}.meeting-frame{width:100%;height:65vh;min-height:420px;border:0;border-radius:14px;background:#111}.notice{background:#fff7df;border:1px solid #f0dfac;padding:12px;border-radius:12px;font-size:13px;line-height:1.7}.empty{color:var(--muted);text-align:center;padding:25px 10px}.toast{position:fixed;top:12px;left:12px;right:12px;background:#163e31;color:white;padding:12px;border-radius:12px;z-index:10;display:none}
+@media(min-width:650px){main{padding-top:20px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:24px}.hero h2{font-size:26px}}
+</style>
+<link rel="icon" href="icon-192.png" type="image/png">
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<header><div class="top"><div><div class="brand">✦ వాక్య దీపం</div><div class="sub">తెలుగు బైబిల్ • చర్చి కుటుంబం • ప్రార్థన</div></div><button class="lang" onclick="toggleLang()">తెలుగు / EN</button></div></header>
+<main>
+<section id="home" class="panel active">
+<div class="hero"><div class="eyebrow">ఈ రోజు వాగ్దాన వాక్యం • ఉదయం 8:00</div><h2 id="dailyTitle">భయపడకుము; నేను నీకు తోడైయున్నాను.</h2><div class="verse" id="dailyVerse">నీవు దిగులుపడకుము; నేను నీ దేవుడను, నిన్ను బలపరచుదును.</div><div class="ref" id="dailyRef">యెషయా 41:10 • నమూనా వాక్యం</div><div class="actions"><button onclick="shareVerse()">↗ వాక్యాన్ని పంచుకోండి</button><button class="secondary" onclick="saveVerse()">♡ సేవ్ చేయండి</button></div></div>
+<div class="section-title">మీ ఆధ్యాత్మిక స్థలం</div><div class="grid">
+<button class="tile" onclick="showTab('bible')"><strong>📖 తెలుగు బైబిల్</strong><span>గ్రంథం • అధ్యాయం • వచనం</span></button>
+<button class="tile" onclick="showTab('church')"><strong>⛪ చర్చిని కనుగొనండి</strong><span>చర్చి వెతకండి / చేరండి</span></button>
+<button class="tile" onclick="showTab('prayer')"><strong>🙏 ప్రార్థన అభ్యర్థన</strong><span>మీ ప్రార్థనను పంచుకోండి</span></button>
+<button class="tile" onclick="showTab('events')"><strong>🗓️ కార్యక్రమాలు</strong><span>సభలు & ఆన్‌లైన్ మీటింగ్‌లు</span></button>
+</div>
+<div class="notice" style="margin-top:14px"><b>గమనిక:</b> ఉదయం 8 గంటల వాక్యం ఈ నమూనా యాప్‌లో తెరిచినప్పుడు చూపబడుతుంది. నిజమైన push notification కోసం యాప్‌ను హోస్ట్ చేసి notification permission మరియు scheduled service కలపాలి.</div>
+</section>
+<section id="bible" class="panel">
+<h2 class="section-title">📖 తెలుగు బైబిల్</h2>
+<div class="card"><p class="small" id="bibleStatus">పూర్తి తెలుగు బైబిల్ పాఠ్యం ఇంటర్నెట్ ద్వారా లోడ్ అవుతుంది. మొదటిసారి తెరవడానికి కొద్దిసేపు పట్టవచ్చు.</p><label>గ్రంథాన్ని ఎంచుకోండి</label><select id="bookSelect" onchange="updateChapters()"></select><div class="row"><div><label>అధ్యాయం</label><select id="chapterSelect" onchange="showChapter()"></select></div><div><label>వచనం వెతకండి</label><input id="verseSearch" placeholder="ఉదా: యోహాను 3:16" onkeydown="if(event.key==='Enter')searchVerse()"></div></div><button onclick="searchVerse()">వచనం వెతకండి</button></div>
+<div id="chapterContent" class="card"><p class="small">గ్రంథం మరియు అధ్యాయం ఎంచుకోండి. పూర్తి 66 గ్రంథాల తెలుగు వచన డేటా ఈ starter లో ఇంకా చేర్చబడలేదు; ప్రచురణకు అనుమతించిన పూర్తి అనువాదాన్ని జత చేయాలి.</p></div>
+<div class="notice">డేటా మూలం పరిశీలన: <a href="https://github.com/aruljohn/Bible-telugu" target="_blank" rel="noopener">66 గ్రంథాల తెలుగు JSON ప్రాజెక్ట్</a>. దాని లైసెన్స్, పూర్తి వచనాలు, అనువాద ఖచ్చితత్వం నిర్ధారించిన తర్వాతే పూర్తి పాఠ్యాన్ని బండిల్ చేయాలి.</div>
+</section>
+<section id="church" class="panel">
+<h2 class="section-title">⛪ చర్చి కుటుంబం</h2><div class="card"><label>చర్చి పేరు వెతకండి</label><input id="churchSearch" placeholder="చర్చి పేరు / ప్రాంతం" oninput="renderChurches()"></div>
+<div id="churchList"></div>
+<h3 class="section-title">చర్చి అడ్మిన్: మీ చర్చిని సృష్టించండి</h3>
+<div class="card"><form id="churchForm"><label>చర్చి పేరు *</label><input id="cName" required placeholder="ఉదా: న్యూ లైఫ్ చర్చి"><label>ప్రాంతం / చిరునామా</label><input id="cLocation" placeholder="పట్టణం, ప్రాంతం"><label>సేవ సమయాలు</label><input id="cTime" placeholder="ఆదివారం ఉదయం 9:00"><label>చర్చి గురించి</label><textarea id="cAbout" placeholder="చర్చి పరిచయం"></textarea><label>చర్చి ఫోటో / లోగో</label><input id="cImage" type="file" accept="image/*"><button type="submit">＋ చర్చి సృష్టించండి</button></form><p class="small">ఈ డెమోలో చర్చి వివరాలు ఈ పరికరంలో మాత్రమే సేవ్ అవుతాయి. నిజమైన బహుళ-యూజర్ యాప్‌కు సురక్షిత backend, admin role verification, cloud image storage అవసరం.</p></div>
+</section>
+<section id="admin" class="panel">
+<h2 class="section-title">🔐 చర్చి అడ్మిన్</h2>
+<div class="notice">డెమో భద్రతా గమనిక: ఈ తెరలోని అడ్మిన్ పాత్ర పరికరంలో మాత్రమే ఉంటుంది. నిజమైన భద్రత కోసం సర్వర్‌లో ధృవీకరించిన admin login అవసరం.</div>
+<div class="card"><label>మీ చర్చి ఎంచుకోండి</label><select id="adminChurch"></select><h3>సభ్యులను ఫోన్ నంబర్‌తో జోడించండి</h3><form id="memberForm"><label>సభ్యుడి పేరు</label><input id="mName" required placeholder="పేరు"><label>ఫోన్ నంబర్</label><input id="mPhone" type="tel" required inputmode="tel" placeholder="+91 98765 43210"><button type="submit">＋ సభ్యుడిని జోడించండి</button></form><div id="memberList"></div></div>
+<div class="card"><h3>🎥 మీటింగ్ నియంత్రణలు</h3><p class="small">మీటింగ్‌లో చేరి కెమెరా/మైక్ అనుమతులు ఇవ్వండి. ఈ నమూనాలో దిగువ నియంత్రణలు డెమో జాబితాపై పనిచేస్తాయి; ఇతరుల పరికరాలను నిజంగా mute/unmute చేయడానికి మీటింగ్ provider యొక్క authenticated moderator integration అవసరం.</p><label>సభ్యుడి పేరు</label><input id="speakerName" placeholder="ఉదా: రవి"><div class="actions"><button onclick="addSpeaker()">＋ స్పీకర్ జాబితాలో చేర్చండి</button><button class="secondary" onclick="muteAllSpeakers()">అందరినీ మ్యూట్ చేయండి</button></div><div id="speakerList"></div></div>
+</section>
+<section id="meeting" class="panel"><h2 class="section-title">🎥 ఆన్‌లైన్ ప్రార్థన సమావేశం</h2><div class="card"><p>కెమెరా, మైక్రోఫోన్ అనుమతులు మీ బ్రౌజర్‌లో అడగబడవచ్చు. పాల్గొనేవారు గదిలో చేరిన తర్వాత host controls మీటింగ్ సర్వీస్‌పై ఆధారపడి ఉంటాయి.</p><label>మీటింగ్ గది పేరు</label><input id="meetingRoom" value="VakyaDeepamPrayerRoom" placeholder="గది పేరు"><div class="actions"><button onclick="openMeeting()">మీటింగ్ ప్రారంభించండి / చేరండి</button><button class="secondary" onclick="window.open('https://meet.jit.si/'+encodeURIComponent($('meetingRoom').value.trim()||'VakyaDeepamPrayerRoom'),'_blank','noopener')">కొత్త ట్యాబ్‌లో తెరవండి</button></div><p class="small">ఈ embed పబ్లిక్ Jitsi సేవను ఉపయోగిస్తుంది. 200 మంది capacity లేదా admin moderation హామీ కాదు; production‌లో మీ స్వంత secure Jitsi deployment లేదా అనుకూల moderator service అవసరం.</p><div id="meetingMount"></div></div></section>
+<section id="prayer" class="panel">
+<h2 class="section-title">🙏 ప్రార్థన అభ్యర్థనలు</h2>
+<div class="card"><form id="prayerForm"><label>మీ పేరు (ఐచ్చికం)</label><input id="pName" placeholder="పేరు లేదా ఖాళీగా వదలండి"><label>చర్చి ఎంచుకోండి</label><select id="pChurch"><option value="">వ్యక్తిగత అభ్యర్థన / చర్చి ఎంచుకోలేదు</option></select><label>ప్రార్థన అభ్యర్థన *</label><textarea id="pText" required maxlength="2000" placeholder="మీ ప్రార్థన అభ్యర్థనను ఇక్కడ రాయండి"></textarea><label>గోప్యత</label><select id="pVisibility"><option value="private">వ్యక్తిగతం — నా పరికరంలో మాత్రమే</option><option value="church">ఎంచుకున్న చర్చి సభ్యులకు కనిపించాలి</option><option value="anonymous">చర్చిలో పేరు చూపకుండా పంచుకోండి</option></select><label><input id="pConsent" type="checkbox" required style="width:auto;margin-right:7px">ఈ అభ్యర్థనలోని వివరాలను ఎంచుకున్న ప్రేక్షకులతో పంచుకోవడానికి అంగీకరిస్తున్నాను.</label><button type="submit">🙏 అభ్యర్థన సేవ్ చేయండి</button></form><p class="small">గోప్యత: ఆరోగ్యం, ఫోన్ నంబర్లు లేదా ఇతర అత్యంత వ్యక్తిగత వివరాలు అవసరమైతే మాత్రమే పంచుకోండి. ఈ ప్రోటోటైప్ డేటా అదే బ్రౌజర్‌లో ఉంటుంది; ఇది ఇంకా సురక్షితమైన బహుళ-యూజర్ సర్వర్ కాదు.</p></div><div class="card"><label>చర్చి ప్రార్థన అభ్యర్థనలు చూడండి</label><select id="prayerChurchFilter" onchange="renderPrayers()"><option value="all">అన్ని చర్చిలు / వ్యక్తిగత డెమో</option></select><p class="small">చర్చి అభ్యర్థనలకు స్పందనలు ఇవ్వవచ్చు. నిజమైన ఇతర సభ్యులకు చూపడానికి backend అవసరం.</p></div><div id="prayerList"></div>
+</section>
+<section id="inbox" class="panel"><h2 class="section-title">✉️ ఇన్‌బాక్స్</h2><div class="card"><p class="small">మీరు ఎంచుకున్న పాత్ర ఆధారంగా ప్రార్థన స్పందనలు, అడ్మిన్ సందేశాలు ఇక్కడ కనిపిస్తాయి. ఇది ప్రస్తుత పరికరంలోని డెమో ఇన్‌బాక్స్ మాత్రమే.</p><label>ఇన్‌బాక్స్ వీక్షణ</label><select id="inboxRole" onchange="renderInbox()"><option value="user">సభ్యుని ఇన్‌బాక్స్</option><option value="admin">చర్చి అడ్మిన్ ఇన్‌బాక్స్</option></select><label>చర్చి (అడ్మిన్ కోసం)</label><select id="inboxChurch" onchange="renderInbox()"><option value="all">అన్ని చర్చిలు</option></select></div><div id="inboxList"></div></section>
+<section id="events" class="panel">
+<h2 class="section-title">🗓️ చర్చి కార్యక్రమాలు</h2><div class="card"><form id="eventForm"><label>కార్యక్రమం పేరు *</label><input id="eName" required placeholder="ఉదా: ఆన్‌లైన్ ప్రార్థన సమావేశం"><div class="row"><div><label>తేదీ</label><input id="eDate" type="date" required></div><div><label>సమయం</label><input id="eTime" type="time" value="19:00" required></div></div><label>వివరాలు</label><textarea id="eDesc" placeholder="సభ వివరాలు"></textarea><label>ఆన్‌లైన్ మీటింగ్ లింక్ (ఐచ్చికం)</label><input id="eLink" type="url" placeholder="https://meet.jit.si/..."><button type="submit">＋ కార్యక్రమం జోడించండి</button></form><p class="small">ఈ డెమోలో కార్యక్రమాలు స్థానికంగా సేవ్ అవుతాయి. ఉచిత Jitsi గది సృష్టించవచ్చు; 200 మంది సామర్థ్యం ఉచిత పబ్లిక్ సర్వీస్‌లో హామీ కాదు.</p></div><div id="eventList"></div>
+</section>
+<section id="profile" class="panel"><h2 class="section-title">⚙️ నా యాప్</h2><div class="card"><h3>సేవ్ చేసిన వాక్యాలు</h3><div id="savedList" class="small">ఇంకా వాక్యాలు సేవ్ చేయలేదు.</div></div><div class="card"><h3>యాప్ ఇన్‌స్టాల్ చేయండి</h3><p class="small">Android: Chrome మెనూ → Install app / Add to Home Screen. iPhone: Safari → Share → Add to Home Screen.</p><button class="secondary" id="installButton" style="display:none" onclick="installApp()">📲 యాప్ ఇన్‌స్టాల్ చేయండి</button></div><div class="card"><h3>ఉచిత సేవ</h3><p>ఈ starter లో ఎటువంటి చెల్లింపు లేదా subscription లేదు. హోస్టింగ్, cloud storage, push notifications మరియు 200-మంది live video కోసం ఉచిత సేవల పరిమితులు ఉంటాయి.</p><button class="secondary" onclick="requestNotifications()">🔔 నోటిఫికేషన్ అనుమతి</button><button class="secondary" onclick="exportData()">నా డెమో డేటా డౌన్‌లోడ్</button></div><div class="notice">భద్రత: ఈ నమూనాలో అసలు login లేదా server-side admin verification లేదు. ప్రజలకు విడుదల చేసే ముందు తప్పనిసరిగా authentication, permissions, moderation మరియు privacy controls జోడించాలి.</div></section>
+</main>
+<nav class="tabs"><button class="active" data-tab="home" onclick="showTab('home')"><span class="ico">⌂</span>హోమ్</button><button data-tab="bible" onclick="showTab('bible')"><span class="ico">📖</span>బైబిల్</button><button data-tab="church" onclick="showTab('church')"><span class="ico">⛪</span>చర్చి</button><button data-tab="meeting" onclick="showTab('meeting')"><span class="ico">🎥</span>మీటింగ్</button><button data-tab="admin" onclick="showTab('admin')"><span class="ico">🔐</span>అడ్మిన్</button><button data-tab="prayer" onclick="showTab('prayer')"><span class="ico">🙏</span>ప్రార్థన</button><button data-tab="inbox" onclick="showTab('inbox')"><span class="ico">✉️</span>ఇన్‌బాక్స్</button><button data-tab="events" onclick="showTab('events')"><span class="ico">🗓️</span>సభలు</button><button data-tab="profile" onclick="showTab('profile')"><span class="ico">☰</span>మరిన్ని</button></nav>
+<script>
+const books=[
+["ఆదికాండము",50,"Genesis"],
+["నిర్గమకాండము",40,"Exodus"],
+["లేవీయకాండము",27,"Leviticus"],
+["సంఖ్యాకాండము",36,"Numbers"],
+["ద్వితీయోపదేశకాండము",34,"Deuteronomy"],
+["యెహోషువ",24,"Joshua"],
+["న్యాయాధిపతులు",21,"Judges"],
+["రూతు",4,"Ruth"],
+["1 సమూయేలు",31,"1Samuel"],
+["2 సమూయేలు",24,"2Samuel"],
+["1 రాజులు",22,"1Kings"],
+["2 రాజులు",25,"2Kings"],
+["1 దినవృత్తాంతములు",29,"1Chronicles"],
+["2 దినవృత్తాంతములు",36,"2Chronicles"],
+["ఎజ్రా",10,"Ezra"],
+["నెహెమ్యా",13,"Nehemiah"],
+["ఎస్తేరు",10,"Esther"],
+["యోబు",42,"Job"],
+["కీర్తనలు",150,"Psalms"],
+["సామెతలు",31,"Proverbs"],
+["ప్రసంగి",12,"Ecclesiastes"],
+["పరమగీతము",8,"Song of Songs"],
+["యెషయా",66,"Isaiah"],
+["యిర్మీయా",52,"Jeremiah"],
+["విలాపవాక్యములు",5,"Lamentations"],
+["యెహెజ్కేలు",48,"Ezekiel"],
+["దానియేలు",12,"Daniel"],
+["హోషేయ",14,"Hosea"],
+["యోవేలు",3,"Joel"],
+["ఆమోసు",9,"Amos"],
+["ఓబద్యా",1,"Obadiah"],
+["యోనా",4,"Jonah"],
+["మీకా",7,"Micah"],
+["నహూము",3,"Nahum"],
+["హబక్కూకు",3,"Habakkuk"],
+["జెఫన్యా",3,"Zephaniah"],
+["హగ్గయి",2,"Haggai"],
+["జెకర్యా",14,"Zechariah"],
+["మలాకీ",4,"Malachi"],
+["మత్తయి",28,"Matthew"],
+["మార్కు",16,"Mark"],
+["లూకా",24,"Luke"],
+["యోహాను",21,"John"],
+["అపొస్తలుల కార్యములు",28,"Acts"],
+["రోమీయులకు",16,"Romans"],
+["1 కొరింథీయులకు",16,"1Corinthians"],
+["2 కొరింథీయులకు",13,"2Corinthians"],
+["గలతీయులకు",6,"Galatians"],
+["ఎఫెసీయులకు",6,"Ephesians"],
+["ఫిలిప్పీయులకు",4,"Philippians"],
+["కొలొస్సయులకు",4,"Colossians"],
+["1 థెస్సలొనీకయులకు",5,"1Thessalonians"],
+["2 థెస్సలొనీకయులకు",3,"2Thessalonians"],
+["1 తిమోతికి",6,"1Timothy"],
+["2 తిమోతికి",4,"2Timothy"],
+["తీతుకు",3,"Titus"],
+["ఫిలేమోనుకు",1,"Philemon"],
+["హెబ్రీయులకు",13,"Hebrews"],
+["యాకోబు",5,"James"],
+["1 పేతురు",5,"1Peter"],
+["2 పేతురు",3,"2Peter"],
+["1 యోహాను",5,"1John"],
+["2 యోహాను",1,"2John"],
+["3 యోహాను",1,"3John"],
+["యూదా",1,"Jude"],
+["ప్రకటన గ్రంథము",22,"Revelation"]
+];
+const demoVerses={"ఆదికాండము-1":[["1","ఆదియందు దేవుడు భూమ్యాకాశములను సృజించెను."],["2","భూమి నిరాకారముగాను శూన్యముగాను ఉండెను; అంధకారము అగాధ జలముపైన ఉండెను."],["3","దేవుడు వెలుగు కమ్మని పలుకగా వెలుగు కలిగెను."]],"యోహాను-3":[["16","దేవుడు లోకమును ఎంతో ప్రేమించెను; కాగా ఆయన తన అద్వితీయ కుమారునిగా పుట్టిన వానిని అనుగ్రహించెను."]],"కీర్తనలు-23":[["1","యెహోవా నా కాపరి; నాకు లేమి కలుగదు."],["2","పచ్చికగల చోట్ల ఆయన నన్ను పరుండజేయుచున్నాడు; శాంతికరమైన జలములయొద్ద నన్ను నడిపించుచున్నాడు."]]};
+let churches=JSON.parse(localStorage.getItem('vb_churches')||'[]'),members=JSON.parse(localStorage.getItem('vb_members')||'{}'),speakers=JSON.parse(localStorage.getItem('vb_speakers')||'[]'),prayers=JSON.parse(localStorage.getItem('vb_prayers')||'[]'),events=JSON.parse(localStorage.getItem('vb_events')||'[]'),saved=JSON.parse(localStorage.getItem('vb_saved')||'[]'),inbox=JSON.parse(localStorage.getItem('vb_inbox')||'[]'),english=false;
+const $=id=>document.getElementById(id);
+function toast(t){$('toast').textContent=t;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2800)}
+function showTab(id){document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));if(id==='church')renderChurches();if(id==='prayer')renderPrayers();if(id==='events')renderEvents();if(id==='profile')renderSaved();if(id==='admin')renderAdmin();if(id==='inbox')renderInbox();window.scrollTo(0,0)}
+function toggleLang(){english=!english;toast(english?'English option selected; complete translation is not yet implemented.':'తెలుగు ప్రధాన భాష.');}
+function shareVerse(){let t=$('dailyTitle').textContent+' — '+$('dailyRef').textContent;if(navigator.share)navigator.share({title:'ఈ రోజు వాక్యం',text:t});else navigator.clipboard?.writeText(t).then(()=>toast('వాక్య సూచన కాపీ అయింది'))}
+function saveVerse(){saved.unshift({text:$('dailyTitle').textContent,ref:$('dailyRef').textContent});localStorage.setItem('vb_saved',JSON.stringify(saved));toast('వాక్యం సేవ్ అయింది')}
+const bibleCache={};
+async function loadBibleBook(idx){const b=books[idx];if(bibleCache[b[2]])return bibleCache[b[2]];const status=$('bibleStatus');status.textContent='లోడ్ అవుతోంది: '+b[0]+'…';try{const r=await fetch('https://raw.githubusercontent.com/aruljohn/Bible-telugu/master/'+encodeURIComponent(b[2])+'.json');if(!r.ok)throw new Error('HTTP '+r.status);const data=await r.json();if(!data.chapters||!Array.isArray(data.chapters))throw new Error('Unexpected data format');bibleCache[b[2]]=data;status.textContent='తెలుగు బైబిల్ పాఠ్యం ఆన్‌లైన్ మూలం నుండి లోడ్ అవుతోంది. మూలం: aruljohn/Bible-telugu (MIT repository license; translation provenance should be checked before redistribution).';return data}catch(e){status.textContent='ఈ సమయంలో పాఠ్యం లోడ్ కాలేదు. ఇంటర్నెట్ కనెక్షన్ తనిఖీ చేసి మళ్లీ ప్రయత్నించండి.';throw e}}
+function initBible(){books.forEach((b,i)=>{let o=document.createElement('option');o.value=i;o.textContent=b[0];$('bookSelect').appendChild(o)});updateChapters()}
+function updateChapters(){let b=books[+$('bookSelect').value];$('chapterSelect').innerHTML='';for(let i=1;i<=b[1];i++){let o=document.createElement('option');o.value=i;o.textContent=i+' అధ్యాయం';$('chapterSelect').appendChild(o)}showChapter()}
+async function showChapter(){let idx=+$('bookSelect').value,b=books[idx],ch=+$('chapterSelect').value,el=$('chapterContent');el.innerHTML='<p class="small">'+b[0]+' '+ch+' అధ్యాయం లోడ్ అవుతోంది…</p>';try{const data=await loadBibleBook(idx);const chapter=data.chapters.find(x=>Number(x.chapter)===ch);if(!chapter)throw new Error('Chapter missing');el.innerHTML='<h3>'+esc(b[0])+' '+ch+' అధ్యాయం</h3>'+chapter.verses.map(v=>'<div class="verse-line" id="verse-'+v.verse+'"><span class="verse-num">'+v.verse+'</span>'+esc(v.text)+'</div>').join('')+'<div class="actions"><button class="secondary" onclick="prevChapter()">← ముందు</button><button onclick="nextChapter()">తర్వాత →</button></div><p class="small">మూలం: aruljohn/Bible-telugu. అనువాద నాణ్యత మరియు హక్కుల వివరాలను ప్రచురణకు ముందు పరిశీలించాలి.</p>';}catch(e){el.innerHTML='<h3>'+esc(b[0])+' '+ch+'</h3><p>ఈ అధ్యాయం లోడ్ కాలేదు. ఇంటర్నెట్ అందుబాటులో ఉందో చూసి మళ్లీ ప్రయత్నించండి.</p><button onclick="showChapter()">మళ్లీ ప్రయత్నించండి</button><div class="actions"><button class="secondary" onclick="prevChapter()">← ముందు</button><button onclick="nextChapter()">తర్వాత →</button></div>'}}
+function prevChapter(){if(+$('chapterSelect').value>1){$('chapterSelect').value=+$('chapterSelect').value-1;showChapter()}else if(+$('bookSelect').value>0){$('bookSelect').value=+$('bookSelect').value-1;updateChapters();$('chapterSelect').value=books[+$('bookSelect').value][1];showChapter()}}
+function nextChapter(){let b=books[+$('bookSelect').value];if(+$('chapterSelect').value<b[1]){$('chapterSelect').value=+$('chapterSelect').value+1;showChapter()}else if(+$('bookSelect').value<65){$('bookSelect').value=+$('bookSelect').value+1;updateChapters()}}
+async function searchVerse(){let q=$('verseSearch').value.trim();let m=q.match(/^(.+?)\s*(\d+):(\d+)$/);if(!m){toast('ఈ రూపంలో వెతకండి: యోహాను 3:16');return}let idx=books.findIndex(b=>b[0].includes(m[1])||m[1].includes(b[0]));if(idx<0){toast('గ్రంథం కనబడలేదు; తెలుగు గ్రంథం పేరుతో ప్రయత్నించండి');return}$('bookSelect').value=idx;updateChapters();$('chapterSelect').value=+m[2];await showChapter();setTimeout(()=>{let v=$('chapterContent').querySelector('#verse-'+Number(m[3]));if(v){v.scrollIntoView({behavior:'smooth',block:'center'});v.style.background='#fff4d6';toast(m[0]+' చూపించబడింది')}else toast('ఆ వచనం కనబడలేదు; అధ్యాయం/వచనం తనిఖీ చేయండి')},250)}
+$('churchForm').addEventListener('submit',async e=>{e.preventDefault();let img='';let f=$('cImage').files[0];if(f){if(f.size>1500000){toast('ఫోటో 1.5MB కంటే చిన్నదిగా ఎంచుకోండి');return}img=await new Promise(res=>{let r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(f)})}churches.unshift({id:Date.now(),name:$('cName').value,location:$('cLocation').value,time:$('cTime').value,about:$('cAbout').value,image:img,members:1});localStorage.setItem('vb_churches',JSON.stringify(churches));e.target.reset();renderChurches();toast('చర్చి ఈ పరికరంలో సృష్టించబడింది')});
+function renderChurches(){refreshPrayerChurches();let q=($('churchSearch')?.value||'').toLowerCase(),list=churches.filter(c=>(c.name+' '+c.location).toLowerCase().includes(q));$('churchList').innerHTML=list.length?list.map(c=>`<div class="card">${c.image?`<img class="church-img" src="${c.image}">`:''}<span class="pill">చర్చి</span><h3>${esc(c.name)}</h3><div class="small">📍 ${esc(c.location||'ప్రాంతం ఇవ్వలేదు')} ${c.time?'• '+esc(c.time):''}</div><p>${esc(c.about||'')}</p><button onclick="joinChurch(${c.id})">చేరడానికి అభ్యర్థించండి</button></div>`).join(''):'<div class="empty">ఇంకా చర్చిలు లేవు. మొదటి చర్చిని సృష్టించండి.</div>'}
+function joinChurch(id){toast('చేరిక అభ్యర్థన డెమోలో చూపబడింది. నిజమైన admin‌కు పంపడానికి backend అవసరం.')}
+function renderAdmin(){let sel=$('adminChurch'),old=sel.value;sel.innerHTML=churches.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');if(old&&churches.some(c=>String(c.id)===old))sel.value=old;renderMembers()}
+$('adminChurch').addEventListener('change',renderMembers);
+$('memberForm').addEventListener('submit',e=>{e.preventDefault();let id=$('adminChurch').value;if(!id){toast('ముందుగా ఈ పరికరంలో చర్చి సృష్టించండి');return}members[id]=members[id]||[];let phone=$('mPhone').value.trim();if(members[id].some(m=>m.phone===phone)){toast('ఈ నంబర్ ఇప్పటికే జోడించబడింది');return}members[id].push({name:$('mName').value.trim(),phone,joined:new Date().toLocaleDateString()});localStorage.setItem('vb_members',JSON.stringify(members));e.target.reset();renderMembers();toast('సభ్యుడు ఈ పరికరంలోని డెమో జాబితాలో జోడించబడ్డారు')});
+function renderMembers(){let id=$('adminChurch').value,arr=members[id]||[];$('memberList').innerHTML=arr.length?arr.map((m,i)=>`<div class="member-row"><div><b>${esc(m.name)}</b><div class="small">${esc(m.phone)}</div></div><button class="secondary" onclick="removeMember('${id}',${i})">తొలగించు</button></div>`).join(''):'<p class="small">ఈ చర్చికి ఇంకా సభ్యులు జోడించలేదు.</p>'}
+function removeMember(id,i){members[id].splice(i,1);localStorage.setItem('vb_members',JSON.stringify(members));renderMembers()}
+function addSpeaker(){let name=$('speakerName').value.trim();if(!name){toast('స్పీకర్ పేరు నమోదు చేయండి');return}speakers.push({name,muted:false});localStorage.setItem('vb_speakers',JSON.stringify(speakers));$('speakerName').value='';renderSpeakers()}
+function muteAllSpeakers(){speakers=speakers.map(s=>({...s,muted:true}));localStorage.setItem('vb_speakers',JSON.stringify(speakers));renderSpeakers();toast('డెమో స్పీకర్ జాబితా మ్యూట్ చేయబడింది')}
+function toggleSpeaker(i){speakers[i].muted=!speakers[i].muted;localStorage.setItem('vb_speakers',JSON.stringify(speakers));renderSpeakers()}
+function renderSpeakers(){$('speakerList').innerHTML=speakers.length?speakers.map((s,i)=>`<div class="member-row"><div><b>${esc(s.name)}</b><div class="small">${s.muted?'మ్యూట్':'మైక్ అనుమతి'}</div></div><button class="secondary" onclick="toggleSpeaker(${i})">${s.muted?'అన్‌మ్యూట్':'మ్యూట్'}</button></div>`).join(''):'<p class="small">డెమో స్పీకర్లు లేరు.</p>'}
+function openMeeting(){let room=$('meetingRoom').value.trim().replace(/[^a-zA-Z0-9_-]/g,'');if(!room){toast('గది పేరు నమోదు చేయండి');return}let mount=$('meetingMount');mount.innerHTML='';let frame=document.createElement('iframe');frame.className='meeting-frame';frame.allow='camera; microphone; fullscreen; display-capture; autoplay; clipboard-write';frame.allowFullscreen=true;frame.title='Online prayer meeting';frame.src='https://meet.jit.si/'+encodeURIComponent(room);mount.appendChild(frame);toast('మీటింగ్ తెరవబడుతోంది. కెమెరా/మైక్ అనుమతులు ఇవ్వండి')}
+function refreshPrayerChurches(){let opts=churches.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');$('pChurch').innerHTML='<option value="">వ్యక్తిగత అభ్యర్థన / చర్చి ఎంచుకోలేదు</option>'+opts;$('prayerChurchFilter').innerHTML='<option value="all">అన్ని చర్చిలు / వ్యక్తిగత డెమో</option>'+opts}
+$('prayerForm').addEventListener('submit',e=>{e.preventDefault();let visibility=$('pVisibility').value,churchId=$('pChurch').value;if(visibility==='church'&&!churchId){toast('చర్చి సభ్యులతో పంచుకోవడానికి చర్చి ఎంచుకోండి');return}prayers.unshift({id:Date.now(),name:$('pName').value.trim(),text:$('pText').value.trim(),visibility,churchId:churchId||null,anonymous:visibility==='anonymous',date:new Date().toLocaleDateString(),responses:[]});localStorage.setItem('vb_prayers',JSON.stringify(prayers));if(churchId){inbox.unshift({id:Date.now()+1,role:'admin',churchId,title:'కొత్త ప్రార్థన అభ్యర్థన',body:($('pName').value.trim()||'పేరు చూపలేదు')+': '+$('pText').value.trim().slice(0,180),date:new Date().toLocaleString(),read:false});localStorage.setItem('vb_inbox',JSON.stringify(inbox))}e.target.reset();refreshPrayerChurches();renderPrayers();renderInbox();toast('ప్రార్థన అభ్యర్థన ఈ పరికరంలో సేవ్ అయింది')});
+function respondPrayer(id){let p=prayers.find(x=>x.id===id);if(!p)return;let text=prompt('మీ ప్రార్థన స్పందన / ప్రోత్సాహక మాట నమోదు చేయండి');if(!text||!text.trim())return;p.responses=p.responses||[];p.responses.push({text:text.trim().slice(0,1000),date:new Date().toLocaleDateString()});inbox.unshift({id:Date.now(),role:'user',churchId:p.churchId||null,title:'మీ ప్రార్థనకు స్పందన వచ్చింది',body:text.trim().slice(0,1000),date:new Date().toLocaleString(),read:false});localStorage.setItem('vb_inbox',JSON.stringify(inbox));localStorage.setItem('vb_prayers',JSON.stringify(prayers));renderPrayers();toast('స్పందన జోడించబడింది — ఇన్‌బాక్స్‌లో చూడండి')}
+function deletePrayer(id){if(!confirm('ఈ ప్రార్థన అభ్యర్థనను తొలగించాలా?'))return;prayers=prayers.filter(p=>p.id!==id);localStorage.setItem('vb_prayers',JSON.stringify(prayers));renderPrayers();toast('ఈ పరికరంలోని అభ్యర్థన తొలగించబడింది')}
+function renderPrayers(){let filter=$('prayerChurchFilter')?.value||'all';let visible=prayers.filter(p=>{if(p.visibility==='private')return true;if(filter==='all')return true;return String(p.churchId||'')===filter});$('prayerList').innerHTML=visible.length?visible.map(p=>{let church=churches.find(c=>String(c.id)===String(p.churchId));return `<div class="card"><span class="pill">${p.visibility==='private'?'వ్యక్తిగత డెమో':p.anonymous?'పేరు చూపని చర్చి అభ్యర్థన':'చర్చి అభ్యర్థన'}</span>${church?`<div class="small">⛪ ${esc(church.name)}</div>`:''}<p>${esc(p.text)}</p><div class="small">${esc(p.anonymous?'పేరు చూపలేదు':p.name||'పేరు ఇవ్వలేదు')} • ${esc(p.date||'')}</div><h4>🙏 స్పందనలు / ప్రార్థనలో తోడుగా</h4>${(p.responses||[]).map(r=>`<div class="verse-line">${esc(r.text)} <span class="small">• ${esc(r.date)}</span></div>`).join('')||'<p class="small">ఇంకా స్పందనలు లేవు.</p>'}<div class="actions"><button class="secondary" onclick="respondPrayer(${p.id})">🙏 స్పందించండి</button><button class="secondary" onclick="deletePrayer(${p.id})">తొలగించండి</button></div></div>`}).join(''):'<div class="empty">ఈ ఎంపికలో ప్రార్థన అభ్యర్థనలు లేవు.</div>'} 
+
+$('eventForm').addEventListener('submit',e=>{e.preventDefault();events.unshift({name:$('eName').value,date:$('eDate').value,time:$('eTime').value,desc:$('eDesc').value,link:$('eLink').value});localStorage.setItem('vb_events',JSON.stringify(events));e.target.reset();$('eTime').value='19:00';renderEvents();toast('కార్యక్రమం సేవ్ అయింది')});
+function renderInbox(){if(!$('inboxList'))return;let role=$('inboxRole')?.value||'user',sel=$('inboxChurch'),old=sel?.value||'all';if(sel){sel.innerHTML='<option value="all">అన్ని చర్చిలు</option>'+churches.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');sel.value=churches.some(c=>String(c.id)===old)?old:'all';sel.disabled=role!=='admin'}let filter=sel?.value||'all';let rows=inbox.filter(m=>m.role===role&&(role!=='admin'||filter==='all'||String(m.churchId||'')===filter));$('inboxList').innerHTML=rows.length?rows.map(m=>`<div class="card"><span class="pill">${m.read?'చదివారు':'కొత్త సందేశం'}</span><h3>${esc(m.title)}</h3><p>${esc(m.body)}</p><div class="small">${esc(m.date||'')}</div><button class="secondary" onclick="markInboxRead(${m.id})">చదివినట్లు గుర్తించండి</button></div>`).join(''):'<div class="empty">ఇన్‌బాక్స్‌లో సందేశాలు లేవు.</div>'}function markInboxRead(id){inbox=inbox.map(m=>m.id===id?{...m,read:true}:m);localStorage.setItem('vb_inbox',JSON.stringify(inbox));renderInbox()}
+function renderEvents(){$('eventList').innerHTML=events.length?events.map((v,i)=>`<div class="card"><span class="pill">${esc(v.date)} • ${esc(v.time)}</span><h3>${esc(v.name)}</h3><p>${esc(v.desc||'')}</p><div class="actions">${v.link?`<a class="btn" href="${esc(v.link)}" target="_blank" rel="noopener">▶ మీటింగ్‌లో చేరండి</a>`:`<button onclick="makeMeeting(${i})">🎥 Jitsi గది సృష్టించండి</button>`}<button class="secondary" onclick="deleteEvent(${i})">తొలగించు</button></div></div>`).join(''):'<div class="empty">కార్యక్రమాలు ఇంకా లేవు. మొదటి కార్యక్రమాన్ని జోడించండి.</div>'}
+function makeMeeting(i){let slug='VakyaDeepam-'+Math.random().toString(36).slice(2,9);events[i].link='https://meet.jit.si/'+slug;localStorage.setItem('vb_events',JSON.stringify(events));renderEvents();toast('Jitsi గది లింక్ సృష్టించబడింది; సామర్థ్యం హామీ కాదు')}
+function deleteEvent(i){events.splice(i,1);localStorage.setItem('vb_events',JSON.stringify(events));renderEvents()}
+function renderSaved(){$('savedList').innerHTML=saved.length?saved.map(s=>`<p>♡ ${esc(s.text)} <span class="small">(${esc(s.ref)})</span></p>`).join(''):'ఇంకా వాక్యాలు సేవ్ చేయలేదు.'}
+function requestNotifications(){if(!('Notification'in window)){toast('ఈ browser‌లో notifications అందుబాటులో లేవు');return}Notification.requestPermission().then(p=>toast(p==='granted'?'అనుమతి వచ్చింది. నిజమైన 8AM push కోసం hosted scheduler ఇంకా అవసరం.':'అనుమతి ఇవ్వలేదు'))}
+let deferredInstallPrompt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;$('installButton').style.display='inline-flex'});async function installApp(){if(deferredInstallPrompt){deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null}else{toast('iPhone: Safari Share → Add to Home Screen. Android: Chrome menu → Install app.') }}if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+function exportData(){let blob=new Blob([JSON.stringify({churches,members,prayers,events,saved,speakers},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='vakya-deepam-demo-data.json';a.click();URL.revokeObjectURL(a.href)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+initBible();renderChurches();refreshPrayerChurches();renderAdmin();renderSpeakers();renderPrayers();renderEvents();renderSaved();renderInbox();
+</script>
+</body></html>
